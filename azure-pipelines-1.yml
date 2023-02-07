@@ -8,6 +8,13 @@ pr:
 trigger: none
 
 steps:
+- script: |
+    java -version
+  env:
+    JAVA_HOME: $(JAVA_HOME_11_X64)
+    PATH: $(JAVA_HOME_11_X64)/bin:$(PATH)
+
+
 - task: Gradle@2
   inputs:
     workingDirectory: ''
