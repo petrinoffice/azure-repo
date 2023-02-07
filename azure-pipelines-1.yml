@@ -1,7 +1,11 @@
-trigger:
-- main
-
 pool: MyAgentsPool
+
+pr:
+  branches:
+    include:
+      - '*'
+
+trigger: none
 
 steps:
 - task: Gradle@2
