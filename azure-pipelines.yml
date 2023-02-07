@@ -17,6 +17,13 @@ steps:
   displayName: 'Run a multi-line script'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    java -version
+  env:
+    JAVA_HOME: $(JAVA_HOME_11_X64)
+    PATH: $(JAVA_HOME_11_X64)/bin:$(PATH)
+    displayName: 'Java 1'
+
+- script: |
+    java -version
+  env:
+    displayName: 'Java'
