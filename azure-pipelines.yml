@@ -22,6 +22,10 @@ steps:
   displayName: 'JAVA_HOME'
 
 - script: |
+    printenv
+  displayName: 'printenv'
+
+- script: |
     echo 'PATH'
     echo $PATH
   displayName: 'PATH'
