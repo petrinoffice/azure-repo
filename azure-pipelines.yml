@@ -7,8 +7,6 @@ pr:
 
 trigger: none
 
-
-
 steps:
 - task: JavaToolInstaller@0
   inputs:
@@ -16,7 +14,7 @@ steps:
     jdkArchitectureOption: x64
     jdkSourceOption: LocalDirectory
     jdkFile: "/builds/openjdk-11.0.2_linux-x64_bin.tar.gz"
-    jdkDestinationDirectory: "/builds/binaries/externals"
+    jdkDestinationDirectory: "~/java"
     cleanDestinationDirectory: true
 
 - script: echo Hello, world!!!
