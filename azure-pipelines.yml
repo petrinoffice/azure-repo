@@ -24,5 +24,10 @@ steps:
   displayName: 'Java 1'
 
 - script: |
+    echo 'Java home'
+    echo $JAVA_HOME
+  displayName: 'JAVA_HOME'
+
+- script: |
     echo $JAVA_HOME_11_X64
   displayName: 'JAVA_HOME_11_X64'
