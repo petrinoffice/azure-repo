@@ -28,7 +28,7 @@ steps:
     echo $JAVA_HOME
   displayName: 'JAVA_HOME'
 
-  - script: |
+- script: |
     echo 'PATH'
     echo $PATH
   displayName: 'PATH'
