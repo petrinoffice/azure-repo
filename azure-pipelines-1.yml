@@ -8,12 +8,14 @@ pr:
 trigger: none
 
 steps:
-- script: |
-    java -version
-  env:
-    JAVA_HOME: $(JAVA_HOME_11_X64)
-    PATH: $(JAVA_HOME_11_X64)/bin:$(PATH)
-
+- task: Bash@3
+  displayName: 'Workaround: Set environment variables manually'
+  inputs:
+    targetType: 'inline'
+    script: |
+      cd ~
+      echo "##vso[task.setvariable variable=JAVA_HOME_11_X64]/usr/lib/jvm/java-11-openjdk-amd64"
+      echo "##vso[task.setvariable variable=JAVA_HOME]/usr/lib/jvm/java-11-openjdk-amd64"
 
 - task: Gradle@2
   inputs:
