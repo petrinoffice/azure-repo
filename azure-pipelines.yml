@@ -28,6 +28,11 @@ steps:
     echo $JAVA_HOME
   displayName: 'JAVA_HOME'
 
+  - script: |
+    echo 'PATH'
+    echo $PATH
+  displayName: 'PATH'
+
 - script: |
     echo $JAVA_HOME_11_X64
   displayName: 'JAVA_HOME_11_X64'
