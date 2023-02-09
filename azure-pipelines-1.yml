@@ -11,6 +11,7 @@ steps:
 - task: Gradle@2
   timeoutInMinutes: 4
   inputs:
+    options: -S
     gradleWrapperFile: 'gradlew'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: 'default'
