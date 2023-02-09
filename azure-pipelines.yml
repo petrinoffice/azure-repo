@@ -1,4 +1,4 @@
-pool: MyAgentsPool
+pool: Java-self
 
 pr:
   branches:
@@ -8,15 +8,6 @@ pr:
 trigger: none
 
 steps:
-- task: Bash@3
-  displayName: 'Workaround: Set environment variables manually'
-  inputs:
-    targetType: 'inline'
-    script: |
-      cd ~
-      echo "##vso[task.setvariable variable=JAVA_HOME_11_X64]/usr/lib/jvm/java-11-openjdk-amd64"
-      echo "##vso[task.setvariable variable=JAVA_HOME]/usr/lib/jvm/java-11-openjdk-amd64"
-
 - script: echo Hello, world!!!
   displayName: 'Run a one-line script'
 
