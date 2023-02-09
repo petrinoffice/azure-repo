@@ -21,11 +21,6 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-
-- script: |
     echo 'Java home'
     echo $JAVA_HOME
   displayName: 'JAVA_HOME'
@@ -33,11 +28,6 @@ steps:
 - script: |
     printenv
   displayName: 'printenv'
-
-- script: |
-    echo 'PATH'
-    echo $PATH
-  displayName: 'PATH'
 
 - script: |
     echo 'WHOAMI'
