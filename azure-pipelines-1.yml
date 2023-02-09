@@ -8,13 +8,10 @@ pr:
 trigger: none
 
 steps:
-- script: ls -la
-  displayName: dir
-
-# - task: Gradle@2
-#   timeoutInMinutes: 4
-#   inputs:
-#     gradleWrapperFile: 'gradlew'
-#     javaHomeOption: 'JDKVersion'
-#     jdkVersionOption: 'default'
-#     tasks: 'build'
+- task: Gradle@2
+  timeoutInMinutes: 4
+  inputs:
+    gradleWrapperFile: 'gradlew'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: 'default'
+    tasks: 'build'
