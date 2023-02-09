@@ -9,13 +9,9 @@ trigger: none
 
 steps:
 - task: Gradle@2
+  timeoutInMinutes: 4
   inputs:
-    workingDirectory: ''
     gradleWrapperFile: 'gradlew'
-    # gradleOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: 'default'
-    # jdkArchitectureOption: 'x64'
-    # publishJUnitResults: true
-    # testResultsFiles: '**/TEST-*.xml'
     tasks: 'build'
