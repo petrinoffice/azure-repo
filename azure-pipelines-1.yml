@@ -8,11 +8,6 @@ pr:
 trigger: none
 
 steps:
-- task: Gradle@2
-  timeoutInMinutes: 4
-  inputs:
-    options: --debug
-    gradleWrapperFile: 'gradlew'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: 'default'
-    tasks: 'build'
+- template: pipeline/java/gradle/build.yml
+  parameters:
+    displayName: 'Gradle build'
