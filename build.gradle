@@ -2,6 +2,8 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.7.8'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'jacoco'
+	id 'idea'
 }
 
 group = 'com.example'
@@ -28,4 +30,19 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+	finalizedBy jacocoTestReport
+}
+
+jacoco {
+	toolVersion = "0.8.7"
+}
+
+jacocoTestReport{
+	executionData fileTree(project.buildDir.absolutePath).include("jacoco/*.exec")
+	classDirectories.setFrom files(project.sourceSets.main.output)
+	sourceDirectories.setFrom files(project.sourceSets.main.allSource.srcDirs)
+	reports{
+		xml.required=true
+		html.required=true
+	}
 }
