@@ -1,0 +1,13 @@
+parameters:
+- name: 'displayName'
+  type: string
+
+steps:
+  - task: Gradle@2
+    timeoutInMinutes: 4
+    displayName: '${{parameters.displayName}}'
+    inputs:
+      gradleWrapperFile: 'gradlew'
+      javaHomeOption: 'JDKVersion'
+      jdkVersionOption: 'default'
+      tasks: 'build'
