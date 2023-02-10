@@ -7,7 +7,6 @@ steps:
     timeoutInMinutes: 4
     displayName: '${{parameters.displayName}}'
     inputs:
-      options: --debug
       gradleWrapperFile: 'gradlew'
       javaHomeOption: 'JDKVersion'
       jdkVersionOption: 'default'
