@@ -3,11 +3,17 @@ parameters:
   type: string
 
 steps:
-  - task: Gradle@2
+  - task: Gradle@3
     timeoutInMinutes: 4
     displayName: '${{parameters.displayName}}'
     inputs:
       gradleWrapperFile: 'gradlew'
       javaHomeOption: 'JDKVersion'
       jdkVersionOption: 'default'
+      publishJUnitResults: true
+      testResultsFiles: '**/TEST-*.xml'
+      codeCoverageToolOption: 'JaCoCo'
+      codeCoverageClassFilesDirectories: 'build/classes/main/'
+      sonarQubeRunAnalysis: false
+      spotBugsAnalysis: false
       tasks: 'build'
