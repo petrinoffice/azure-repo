@@ -3,12 +3,12 @@ parameters:
   type: object
 
 steps:
-  - template: pipeline/java/gradle/build.yml
+  - template: build.yml
     parameters:
       displayName: 'Gradle Build'
       tasks: 'clean build --info --stacktrace -x test -x integrationTest'
   - ${{ each step in parameters.testSteps }}:
-    - template: pipeline/java/gradle/build.yml
+    - template: build.yml
       parameters:
         displayName: '${{ step.value }}'
         tasks: '${{ step.key }}'
