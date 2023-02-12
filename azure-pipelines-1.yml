@@ -8,6 +8,8 @@ pr:
 trigger: none
 
 steps:
-- template: pipeline/java/gradle/build.yml
-  parameters:
-    displayName: 'Gradle build'
+  - template: pipeline/java/gradle/build-and-test.yml
+    parameters:
+      testSteps:
+        test: 'Unit tests'
+        integrationTest: 'Integration tests'
