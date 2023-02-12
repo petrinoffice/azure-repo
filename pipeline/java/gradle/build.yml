@@ -7,13 +7,8 @@ steps:
     timeoutInMinutes: 4
     displayName: '${{parameters.displayName}}'
     inputs:
+      tasks: 'build --info --stacktrace'
       gradleWrapperFile: 'gradlew'
       javaHomeOption: 'JDKVersion'
       jdkVersionOption: 'default'
       publishJUnitResults: false
-      testResultsFiles: '**/TEST-*.xml'
-      codeCoverageToolOption: 'JaCoCo'
-      codeCoverageClassFilesDirectories: 'build/classes/main/'
-      sonarQubeRunAnalysis: false
-      spotBugsAnalysis: false
-      tasks: 'build'
