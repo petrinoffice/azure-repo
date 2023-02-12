@@ -7,7 +7,7 @@ steps:
     timeoutInMinutes: 4
     displayName: '${{parameters.displayName}}'
     inputs:
+      tasks: 'build --info --stacktrace'
       gradleWrapperFile: 'gradlew'
       javaHomeOption: 'JDKVersion'
       jdkVersionOption: 'default'
-      tasks: 'build'
