@@ -1,5 +1,7 @@
-package com.example.demo.controllers;
+package com.example.demo;
 
+import com.example.demo.controllers.ValueController;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -20,6 +22,6 @@ class ValueControllerTest {
 
     @Test
     void checkValue(){
-        assertThat(valueController.fetchValue()).contains("Test1");
+        Assertions.assertThat(valueController.fetchValue()).contains("Test1");
     }
 }
