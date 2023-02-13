@@ -1,0 +1,14 @@
+parameters:
+- name: 'testSteps'
+  type: object
+
+steps:
+  - template: build.yml
+    parameters:
+      displayName: 'Gradle Build'
+      tasks: 'clean build --info --stacktrace -x test -x integrationTest'
+  - ${{ each step in parameters.testSteps }}:
+    - template: build.yml
+      parameters:
+        displayName: '${{ step.value }}'
+        tasks: '${{ step.key }}'

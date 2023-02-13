@@ -1,13 +1,15 @@
 parameters:
 - name: 'displayName'
   type: string
+- name: 'tasks'
+  type: string
 
 steps:
   - task: Gradle@2
     timeoutInMinutes: 4
     displayName: '${{parameters.displayName}}'
     inputs:
-      tasks: 'clean build --info --stacktrace -x test -x integrationTest'
+      tasks: '${{parameters.tasks}}'
       gradleWrapperFile: 'gradlew'
       javaHomeOption: 'JDKVersion'
       jdkVersionOption: 'default'
