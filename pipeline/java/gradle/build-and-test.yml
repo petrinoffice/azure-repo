@@ -12,10 +12,10 @@ steps:
       parameters:
         displayName: '${{ step.value }}'
         tasks: '${{ step.key }}'
-#  - task: PublishTestResults@2
-#    displayName: 'Publish test report'
-#    condition: always()
-#    inputs:
-#      testResultsFormat: 'JUnit'
-#      testResultsFiles: '**/build/**/TEST-*.xml'
-#      mergeTestResults: true
+  - task: PublishTestResults@2
+    displayName: 'Publish test report'
+    condition: always()
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '**/build/**/TEST-*.xml'
+      mergeTestResults: true
