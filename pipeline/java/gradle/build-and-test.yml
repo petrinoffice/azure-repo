@@ -12,3 +12,19 @@ steps:
       parameters:
         displayName: '${{ step.value }}'
         tasks: '${{ step.key }}'
+  - task: PublishTestResults@2
+    displayName: 'Publish test report'
+    condition: always()
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '**/build/**/TEST-*.xml'
+      mergeTestResults: true
+  - task: PublishCodeCoverageResults@1
+    displayName: 'Publish code coverage'
+    inputs:
+      codeCoverageTool: 'JaCoCo'
+      summaryFileLocation: '**/build/**/jacoco*Report.xml'
+      pathToSources: 'src/main/java'
+      reportDirectory: '**/build/reports/jacoco/**/html'
+      additionalCodeCoverageFiles: '/build/jacoco/*.exec'
+

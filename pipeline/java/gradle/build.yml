@@ -13,3 +13,4 @@ steps:
       gradleWrapperFile: 'gradlew'
       javaHomeOption: 'JDKVersion'
       jdkVersionOption: 'default'
+      publishJUnitResults: false
